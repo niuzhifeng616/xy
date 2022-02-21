@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>编组</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.00453658537 0.0604878049 61.9394366 0.0604878049 61.9394366 61.9999244 0.00453658537 61.9999244"></polygon>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFCF4A" offset="0%"></stop>
+            <stop stop-color="#FFA224" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页备份-8" transform="translate(-264.000000, -1703.000000)">
+            <g id="tuandui-(1)备份-3" transform="translate(264.000000, 1703.000000)">
+                <g id="编组">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M30.9699073,0.0604878049 C51.616361,0.0604878049 61.9394366,10.3838659 61.9394366,31.0303951 C61.9394366,51.6768488 51.616361,61.9999244 30.9699073,61.9999244 C10.323378,61.9999244 0,51.6768488 0,31.0303951 C0,10.3838659 10.323378,0.0604878049 30.9699073,0.0604878049 Z" id="Fill-1" fill="url(#linearGradient-3)" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,218 @@
+/* ----------------选课结果--------------- */
+.selected-class{
+  font-size: 12px;
+  color:#909399;
+}
+
+.progress-title {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+
+/* ------------------------学生成绩----------------------- */
+
+/* 调整学生成绩 */
+.studentScoreAdujst {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .title {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    padding: 0 5px;
+  }
+  .inp-num {
+    width: 50%;
+  }
+}
+
+.studentScoreAdujstTitle {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.studentScoreAdujst>div {
+  width: 33%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------课程设置--------------------------- */
+.class_set_left {
+  border-right: 1px solid #E8E8E8;
+  width:300px;
+}
+
+.class_set_right {
+    width: calc(100% - 300px);
+}
+
+.class_set {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.all {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between
+}
+
+.menuList {
+  background: #fff;
+}
+
+.level1_menuList {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+
+}
+
+.level1_menuList:hover {
+    background: #E6F7FF;
+    color: #4196FF!important;
+}
+.level1_menuList:hover .level_btn{
+    display:block;
+}
+.level1_menuList:hover .title, .level1_menuList:hover .count, .level1_menuList:hover .level_title {
+    color: #4196FF !important;
+}
+.level1_menuList .name{
+  max-width: 170px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.active_height {
+  height: auto;
+}
+
+.close_height {
+  height: 0;
+  overflow: hidden;
+}
+
+.active_bg {
+  background: #E6F7FF;
+  color: #4196FF;
+  border-right: 2px solid #4196FF;
+}
+
+.close_bg {
+  background: #fff;
+  border-right: 2px solid transparent;
+}
+
+.level1_menuList>.title {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  width:65%;
+}
+
+.level1_menuList .count {
+  color: #8C8C8C;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.level1_menuList>.add_level {
+  color: #1890FF;
+  font-size: 12px;
+  position: relative;
+}
+
+.level1_menuList > .level_title {
+    font-size: 14px;
+    color: rgba(0,0,0,0.65);
+}
+
+.level1_menuList>.level_btn {
+  font-size: 12px;
+  display:none;
+}
+.level_btn > span {
+    cursor: pointer;
+    color: #1890FF;
+    line-height: 22px;
+}
+.level_btn > span:first-child {
+    margin-right: 5px;
+
+}
+
+.change-arrow-down {
+    margin-left: 6px;
+}
+
+.ivu-icon-ios-arrow-down:before {
+  content: "\F116";
+}
+.modal-crouse {
+    max-height: 300px;
+    overflow-y: scroll;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+    .modal-crouse li {
+        cursor: pointer;
+        /*padding: 20px 0;*/
+        color: #4285f4;
+        border: 1px solid #d4e4ff;
+        overflow: hidden;
+        margin: 10px;
+        border-radius: 8px;
+        width: 110px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    .modal-crouse li:hover {
+        color: #fff;
+        background-image: linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+        // background-image: -moz-linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+        // background-image: -webkit-linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+        // background-image: -ms-linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+        text-align: center;
+        color: #fff;
+        transition: all 0.3s;
+    }
+
+li.is-active {
+    color: #fff;
+    background-image: linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+    // background-image: -webkit-linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+    // background-image: -ms-linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.take-at-most span {
+    color: #000;
+}
+
+/* 筛选学生弹框样式 */
+.filterStudentContent {
+  margin-bottom: 15px
+}
+
+.filterStudentContent .choose {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  margin: 10px
+}

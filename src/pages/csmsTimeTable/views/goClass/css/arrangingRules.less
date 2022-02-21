@@ -1,0 +1,531 @@
+/*第5步排课规则-更多*/
+.rule-header {
+  border-bottom: 1px solid #dcdee2;
+  margin-bottom: 15px;
+}
+.rule-header .rule-category {
+  height:35px;
+  line-height:35px;
+}
+.rule-header .rule-category li {
+  display: inline-block;
+}
+.rule-header .rule-category li a {
+  display: block;
+}
+.rule-header .rule-category li span {
+  color: #444444;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin-right: 16px;
+}
+.rule-header .li-active span {
+  color: #4196ff !important;
+  border-bottom: 2px solid #4196ff;
+}
+
+.describe {
+  margin: 16px 0;
+  color: #8B8B8B;
+}
+
+.ban-must-table {
+  // border: 3px solid #5D8EF0;
+  cursor: pointer;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 14px;
+  width: 100%;
+  color: #010048;
+}
+
+  .ban-must-table tr {
+      width: 100%;
+      height: 40px;
+      // border: 1px solid #ddd;
+  }
+
+      .ban-must-table tr th {
+          height: 40px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-align: center;
+          // border: 2px solid #8AA9F0;
+          border: 1px solid #D8D8D8;
+      }
+
+      .ban-must-table tr td {
+          height: 40px;
+          // border: 2px solid #8AA9F0;
+          border: 1px solid #D8D8D8;
+          text-align: center;
+          font-weight: initial;
+          height: 44px;
+          /*padding:12px 0;*/
+      }
+
+.table {
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 14px;
+  width: 100%;
+}
+
+  .table tr {
+      width: 100%;
+      height: 40px;
+      border: 1px solid #ddd;
+  }
+
+      .table tr th {
+          height: 40px;
+          white-space: nowrap;
+          overflow: hidden;
+          background-color: #f8f8f9;
+          text-align: center;
+          border: 1px solid #ddd;
+      }
+
+      .table tr td {
+          height: 40px;
+          border: 1px solid #ddd;
+          text-align: center;
+          font-weight: initial;
+          padding: 10px 0;
+      }
+      .all-pick {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        color: #010048;
+        span {
+          display: inline-block;
+          width:91px;
+          height:26px;
+          line-height:26px;
+          // background:rgba(24,144,255,1);
+          border-radius:13px;
+          i {
+            font-size: 12px;
+            margin-right: 5px;
+          }
+        }
+      }
+      .alert {
+        margin: 10px 0;
+      }
+      .un {
+        margin: 10px 13px;
+      }
+// .bg-red {
+//   background: rgba(255,77,60,0.2);
+//   background-color: #FF4B4B;
+// }
+.ban-block{
+  width:106px;
+  height:30px;
+  line-height: 30px;
+  background: #ff4b4b;
+  border:1px solid #df4242;
+  border-radius: 6px;
+  margin:auto;
+  color:#fff;
+}
+
+.bg-blue {
+  background: rgba(22,196,39,0.2);
+}
+.must-block{
+  width:106px;
+  height:30px;
+  line-height: 30px;
+  background: #00B854;
+  border:1px solid #00A44A;
+  border-radius: 6px;
+  margin:auto;
+  color:#fff;
+}
+
+.f14 {
+  font-size: 14px;
+}
+
+.f16 {
+  font-size: 16px;
+}
+
+.left-data {
+  padding: 20px 15px;
+  height: 500px;
+  overflow: auto;
+  width: 230px;
+}
+
+.right-data {
+  width: calc(100% - 250px);
+  height: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.09);
+}
+.right-data table {
+  background:rgba(244,245,247,1);
+}
+.ban-must {
+  // border-radius: 8px;
+  padding: 20px 10px 10px 20px;
+  // background-image: url(~@/assets/csmsTimeTable/banMust.png);
+}
+.ClassPlatoon-rule .no-platoon-img {
+  background-image: url(~@/assets/csmsTimeTable/rule1.png);
+  background-position: center;
+  height: 500px;
+  line-height: 400px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/*ͬʱ�Ͽ�*/
+  .InClass-rule .crouse-list {
+      margin-top: 10px;
+  }
+
+      .InClass-rule .crouse-list h2 {
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 6px;
+      }
+
+      .InClass-rule .crouse-list ul {
+          display: flex;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+      }
+
+          .InClass-rule .crouse-list ul li {
+              margin: 10px;
+          }
+
+  .InClass-rule .is-checked-crouse {
+      margin-top: 10px;
+  }
+
+      .InClass-rule .is-checked-crouse li {
+          margin: 6px 0;
+      }
+
+          .InClass-rule .is-checked-crouse li i {
+              cursor: pointer;
+          }
+
+.priority-title {
+  font-weight: bold;
+  color: #444;
+  text-align: center;
+  height: 37px;
+  line-height: 37px;
+  font-size: 16px;
+}
+
+.priority-level {
+  width: 10px;
+  height: 400px;
+  background: linear-gradient(0deg,rgba(65,150,255,1) 0%,rgba(50,91,235,1) 100%);
+  border-radius: 5px;
+  margin-right: 32px;
+}
+
+.priority-level-gao {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  color: #2447AC;
+  font-size: 14px;
+}
+
+.priority-level-di {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  color: #4196FF;
+  font-size: 14px;
+}
+
+.priority-ul li {
+  width: 342px;
+  height: 40px;
+  background: rgba(240,248,255,1);
+  border: 1px solid rgba(95,155,255,1);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  cursor: all-scroll;
+}
+
+.priority-ul li > span {
+  font-weight: 400;
+  color: #444;
+}
+
+.sameTime-rule .crouse-list {
+  margin: 20px 0 0 10px;
+}
+
+.sameTime-rule .crouse-list li {
+  width: 282px;
+  height: 96px;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 2px 6px 0px rgba(167,167,167,0.4);
+  border-radius: 4px;
+  margin: 0 13px 13px 13px;
+  padding: 12px 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.sameTime-rule .crouse-list .name {
+  font-size: 16px;
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sameTime-rule .left-line {
+  width: 4px;
+  height: 42px;
+  background: rgba(65,150,255,1);
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  top: 27px;
+}
+.other-rule {
+  width: 719px;
+  height: 500px;
+  background: rgba(251,251,251,1);
+  box-shadow: 0px 4px 9px 0px rgba(181,181,181,0.27);
+  border-radius: 11px;
+  margin: 30px auto;
+  padding: 22px 18px;
+  position: relative;
+}
+
+.other-check {
+  margin-bottom: 40px;
+  display: block;
+}
+
+.other-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.afternoon-box {
+  width: 90%;
+  height: 616px;
+  background: rgba(255,255,255,1);
+  border: 1px solid rgba(235,235,235,1);
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  margin: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.afternoon-box .mor-aft-box {
+  width: 329px;
+  height: 384px;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 10px 0px rgba(65,150,255,0.2);
+  border-radius: 12px;
+}
+
+.afternoon-box .header-round {
+  width: 84px;
+  height: 84px;
+  line-height: 84px;
+  text-align: center;
+  background: linear-gradient(90deg,rgba(49,91,239,1) 0%,rgba(121,181,255,1) 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: -42px;
+  left: 123px;
+  z-index: 99;
+}
+
+.afternoon-box .header-name {
+  width: 329px;
+  height: 165px;
+  background: rgba(232,239,255,1);
+  border-radius: 0 0 165px 165px;
+}
+
+.afternoon-box .header-name span {
+  position: absolute;
+  bottom: 50px;
+  left: 148px;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header-name1 {
+  width: 329px;
+  height: 65px;
+  background: rgba(232,239,255,1);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.afternoon-box .radio-group {
+  position: absolute;
+  bottom: 115px;
+  left: 117px;
+}
+
+.afternoon-box .radio-group .span-radio {
+  color: #444;
+  font-size: 14px;
+  font-weight: bold;
+}
+/*ʦͽ����*/
+.IusedFollow-ul {
+  margin: 30px 40px;
+}
+
+.IusedFollow-ul li {
+  width: 303px;
+  height: 270px;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 2px 4px 0px rgba(183,183,183,0.5);
+  border-radius: 4px;
+  margin: 25px;
+  display: inline-block;
+}
+
+.IusedFollow-header {
+  height: 44px;
+  background: rgba(238,245,255,1);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+}
+
+.IusedFollow-header .header-title {
+  font-size: 16px;
+  color: #4196FF;
+  font-weight: bold;
+  width: 241px;
+}
+
+.IusedFollow-header .header-check {
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  background: rgba(255,255,255,1);
+  border: 1px solid rgba(142,195,255,1);
+  border-radius: 2px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.IusedFollow-header .header-check-active {
+  background: rgba(65,150,255,1);
+}
+
+.IusedFollow-body {
+  height: 190px;
+  /*padding: 0 22px;*/
+}
+
+.IusedFollow-master {
+  position: absolute;
+  left: 12px;
+  top: 23px;
+  font-size: 12px;
+  color: #666;
+}
+
+.IusedFollow-disciple {
+  position: absolute;
+  left: 12px;
+  top: 53px;
+  font-size: 12px;
+  color: #666;
+}
+
+.IusedFollow-body .IusedFollow-teacher-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 11px;
+}
+
+.IusedFollow-body .IusedFollow-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(244,244,244,1);
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.IusedFollow-body .IusedFollow-sooner {
+  width: 56px;
+  height: 25px;
+  background: rgba(238,245,255,1);
+  border-radius: 12px 0px 12px 0px;
+  font-size: 12px;
+  color: #4196FF;
+  text-align: center;
+  line-height: 25px;
+}
+
+.IusedFollow-body .IusedFollow-later {
+  width: 56px;
+  height: 25px;
+  background: rgba(253,243,209,1);
+  border-radius: 12px 0px 12px 0px;
+  font-size: 12px;
+  color: #E0B02F;
+  text-align: center;
+  line-height: 25px;
+}
+
+.IusedFollow-body-top {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 22px;
+}
+
+.IusedFollow-body-bottom {
+  height: 119px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 22px;
+}
+
+.IusedFollow-footer {
+  height: 36px;
+  background: rgba(249,250,251,1);
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.IusedFollow-footer:hover {
+  color: #FDA8A4;
+}
+
+.IusedFollow-footer:hover .ivu-icon {
+  color: #FDA8A4 !important;
+}

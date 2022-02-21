@@ -1,0 +1,208 @@
+/* 展开收起筛选组合的样式 */
+/*----table筛选 start----*/
+.selected-box {
+    padding: 20px 30px 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 2px;
+}
+.selected-con {
+    width: 95%;
+    height: inherit;
+}
+.selected-con.isUpStatus {
+    height: 37px;
+    overflow: hidden;
+}
+.posi-down {
+    left: 50%;
+    bottom: 45px;
+    line-height: 22px;
+    color: #939393;
+    cursor: pointer;
+    background: #fff;
+    border-radius:3px;
+    border: 1px dashed #E9E9E9;
+    border-bottom: 1px dashed #E9E9E9;
+    border-top: none;
+    padding: 0 18px;
+}
+/*.posi-down.down {
+    border-bottom: none;
+    border-top: 1px dashed #E9E9E9;
+    bottom: 66px;
+}*/
+.posi-down > i{
+    color: #1890FF;
+}
+.posi-down > i.arrow_rotate {
+    transform: rotate(180deg);
+}
+.selected-con .search-item {
+    display: flex;
+    padding-bottom: 15px;
+}
+.selected-con .search-item > div {
+    width: 70px;
+    text-align: right;
+}
+.selected-con .search-item .ivu-radio-group {
+    width: 154px;
+    margin-bottom: 15px;
+}
+.selected-con .search-item > ul {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: flex-start;
+}
+.selected-con .search-item > ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    min-width: 58px;
+    height: 22px;
+    color: rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+    padding: 0 8px;
+    margin-right: 18px;
+    margin-bottom:15px;
+}
+.selected-con .search-item > ul li.isChecked{
+    color: #fff;
+    background: #1890FF;
+}
+/*.selected-con .search-item > ul li:hover {
+    color: #fff;
+    background: rgba(24,144,255,0.7);
+}*/
+.search-input {
+    border-top: 1px dashed #E9E9E9;
+    padding-top:15px;
+}
+.search-input .xy-content-title-search {
+    margin-left:0px;
+}
+.search-btn {
+    text-align: left;
+    padding-left: 70px;
+    margin-bottom: 20px;
+}
+.ident-type > div{
+    margin-left:20px;
+}
+.ident-type > div span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.ident-type .study {
+    background: #61CD31;
+}
+.ident-type .choose {
+    background: #F9A443;
+}
+.ivu-table-cell-sort {
+    padding-left: 5px; /*排序*/
+}
+.ivu-table-sort {
+    float: left; /*排序btn展示在左侧*/
+    margin-top: 4px;
+}
+.ivu-table-header thead tr th {
+    height: inherit;
+}
+/*.ivu-table thead tr:first-child th:nth-child(n+4),
+.ivu-table thead tr:last-child th:nth-child(3n),
+.ivu-table tbody .ivu-table-row td:nth-child(3n+4) {
+    border-right: 1px solid #EBEEF5;
+}*/
+
+/*----table筛选 end----*/
+/*----添加学生start----*/
+.class-dialog-list {
+    overflow-y: scroll;
+    padding: 10px 0;
+    max-height: 275px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.class-dialog-list li {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 6px 8px;
+    padding: 0 5px;
+    background: rgba(245,245,245,1);
+    border: 1px solid rgba(217,217,217,1);
+    color: rgba(0,0,0,0.65);
+}
+.class-dialog-list li.checked {
+    background: rgba(230,247,255,1);
+    border: 1px solid rgba(65,150,255,1);
+    color: #4196FF;
+}
+/*----添加学生end----*/
+
+/* -----赋分等级Start-------*/
+.assign-sub-tit {
+  /* font-size: 16px; */
+  padding-left: 2%;
+  height: 40px;
+  line-height: 40px;
+}
+.box-sub  {
+  max-height:300px;
+  overflow-y:scroll;
+}
+.box-sub ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+.box-sub ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 109.5px;
+  height: 54px;
+
+}
+.box-sub ul li .box-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 94.5px;
+  height: 44px;
+  background:rgba(245,245,245,1);
+  border-radius:4px;
+  border:1px solid rgba(217,217,217,1);
+  color:rgba(0,0,0,0.65);
+}
+.box-sub ul li .box-p > p {
+  width: 75.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.box-sub ul li .box-p > p:hover {
+    cursor: pointer;
+}
+.is-checked {
+  background:rgba(230,247,255,1) !important;
+  border:1px solid rgba(65,150,255,1) !important;
+  color:rgba(65,150,255,1) !important;
+}
+.ivu-modal-footer {
+  text-align: right;
+}
+/* -----End-------*/

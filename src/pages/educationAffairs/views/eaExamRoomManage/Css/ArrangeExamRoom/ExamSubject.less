@@ -1,0 +1,230 @@
+.ea_ES {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  margin-top: 37px;
+}
+
+.es_item,
+.addSub {
+  width: 310px;
+  height: 160px;
+  border: 2px solid rgba(120, 180, 253, 1);
+  border-radius: 8px;
+  margin-bottom: 32px;
+  background: url(~@/pages/educationAffairs/views/eaExamRoomManage/arrangeExamRoom/Image/background.png);
+}
+
+.addSub {
+  cursor: pointer;
+  position: relative;
+}
+
+.addSub > img,
+.addSub > span {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.addSub > span {
+  top: 108px;
+  text-align: center;
+  color: #666666;
+  width: 106px;
+  height: 34px;
+  background: rgba(239, 239, 239, 1);
+  border-radius: 17px;
+  line-height: 34px;
+}
+
+.addSub:hover > span {
+  color: #fff;
+  background: #4196ff;
+}
+
+.empty {
+  width: 310px;
+}
+
+.es_item_top {
+  padding: 16px 0px 0px 16px;
+}
+
+.es_item_top > p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 10px;
+}
+.item_SubjectName{
+  display: inline-block;
+  max-width: 205px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item_duration {
+  background: rgba(236, 250, 231, 1);
+  border-radius: 15px 1px 0px 15px;
+  font-size: 18px;
+  color: rgba(79, 150, 35, 1);
+  padding: 0 5px 0 10px;
+}
+
+.item_duration > span {
+  font-size: 14px;
+  vertical-align: text-bottom;
+  font-weight: 400;
+}
+
+.es_item_top > div {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.es_item_top > div > span:nth-of-type(1) {
+  display: inline-block;
+}
+
+.es_item_bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e5e5e5;
+  height: 35px;
+  align-items: center;
+  padding: 0 60px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.es_item_bottom span {
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.es_item_bottom > div {
+  cursor: pointer;
+}
+
+.es_delete:hover {
+  color: #ffa394;
+}
+
+.es_edit:hover {
+  color: #4196ff;
+}
+/* 编辑模态框 */
+.edit_title {
+  span {
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+  }
+}
+.edit_title span:nth-child(1) {
+  color: #333;
+  margin-right: 24px;
+}
+.edit_title span:nth-child(2) {
+  color: #333;
+  font-weight: 500;
+}
+
+.ivu-modal-body {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* 添加模态框 */
+.modal_add {
+  display: flex;
+  justify-content: space-between;
+  height: 377px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.sub_sel {
+  text-align: center;
+}
+.sub_sel>div{
+    display: inline-block;
+}
+.modal_add p {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  margin: 12px 0 18px;
+}
+
+/deep/ .ivu-modal-body {
+  padding: 0;
+}
+
+.modal_add_sub {
+  width: 432px;
+  padding: 14px;
+}
+
+.modal_add_time {
+  width: 268px;
+  border-right: 1px solid #e9e6ea;
+  padding: 0 18px 0 24px;
+}
+
+.sub_div {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  padding-top: 20px;
+  height: 327px;
+  overflow-y: auto;
+}
+
+.sub_div > div.sub_div_child {
+  width: 112px;
+  height: 40px;
+  line-height: 40px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(233, 230, 234, 1);
+  border-radius: 4px;
+  font-size: 14px;
+  color: rgba(63, 60, 64, 1);
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding: 0 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.sub_div > .sel_sub {
+  border: 1px solid rgba(132, 198, 62, 1) !important;
+  color: rgba(79, 150, 35, 1) !important;
+}
+
+.sub_div i {
+  /* display: inline-block; */
+  display: none;
+  width: 28px;
+  height: 28px;
+  background-image: url(~@/pages/educationAffairs/views/eaExamRoomManage/arrangeExamRoom/Image/sel_sub.png);
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.sel_sub i {
+  display: inline-block;
+}
+
+.dialog-model-content {
+  padding: 20px;
+}

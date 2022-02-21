@@ -1,0 +1,87 @@
+.xy-searchSelect{
+    height: 32px;
+    padding: 4px 5px;
+    border: 1px solid #dcdee2;
+    display: inline-block;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+    text-align:left;
+    margin-left: 10px;
+}
+.isSelect .pSpan {
+    padding: 8px 12px;
+    color: #4285f4;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid #4285f4;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.isSelect-active {
+    background: #4285f4;
+    color: white!important;
+}
+.result-table{
+	border: 1px solid #EBF0F6;
+	text-align: center;
+	cursor: pointer;
+	margin: 0 auto;
+	border-collapse: collapse;
+	font-size: 14px;
+    width:100%;
+    margin-top:10px;
+    color:rgba(113,129,151,1);
+    border-radius:8px;
+
+}
+.result-table tr {
+	width: 100%;
+	height: 40px;
+	text-align: center;
+}
+.result-table tr th {
+	height: 40px;
+	text-align: center;
+	font-weight:bold;
+    background:#EBF0F6;
+}
+.result-table tr td {
+	height: 40px;
+    border-top:1px solid #D8E0EB;
+    border-bottom:1px solid #D8E0EB;
+    border-right:1px solid #D8E0EB;
+	text-align: center;
+	position: relative;
+    color:#718197;
+    min-width:110px;
+}
+
+.result-table .downUp:hover{
+    color:#2b85e4;
+}
+.result-table .i-active{
+    color:#2b85e4;
+}
+.result-header .ivu-btn-ghost.ivu-btn-dashed:hover, 
+.result-header .ivu-btn-ghost.ivu-btn-default:hover{
+    color: #fff;
+}
+/* .table-header .title{
+    font-weight:bold;
+    font-size:16px;
+    border-left:4px solid #AF85FE;
+    background:rgba(175, 133, 254,0.1);
+    color: #AF85FE;
+    padding:8px 10px;
+    display:inline-block;
+    margin-bottom:10px;
+}
+.table-header span{
+    margin-right:15px;
+} */

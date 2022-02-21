@@ -1,0 +1,223 @@
+/* xyPrj - Xiaoyang Project Department 项目部模块 */
+.xyPrj-nav {
+  display: inline-flex;
+  background: #fff;
+  box-shadow: 0px 2px 6px 0px rgba(29, 41, 78, 0.15);
+  border-radius: 20px;
+}
+
+.xyPrj-nav a {
+  display: inline-block;
+  position: relative;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #909399;
+}
+
+.xyPrj-nav a.selected {
+  font-weight: bold;
+  color: #000;
+}
+
+.xyPrj-nav a.selected::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  content: "";
+  width: 26px;
+  height: 4px;
+  margin: 2px auto;
+  background: #427de7;
+}
+
+.xyPrj-layout {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  margin-top: 15px!important;
+}
+
+.xyPrj-layout-header {
+  margin: 10px 0;
+}
+
+.xyPrj-layout-body {
+  display: flex;
+}
+
+.xyPrj-layout-area.xyPrj-layout-half {
+  width: 49%;
+}
+
+.xyPrj-layout-area {
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px dashed #ddd;
+}
+
+.xyPrj-layout-area:last-child {
+  padding-right: 0;
+  margin-right: 0;
+  border-right: none;
+}
+
+.xyPrj-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.xyPrj-title::before {
+  content: "";
+  display: inline-block;
+  margin-right: 5px;
+  width: 4px;
+  height: 14px;
+  background: #427de7;
+}
+
+.xyPrj-table {
+  width: 100%;
+  background: #ecf5ff;
+  border: 1px solid #118cee;
+  color: #118CEE;
+  text-align: center;
+}
+
+.xyPrj-table th,
+.xyPrj-table td {
+  padding: 10px;
+  border: 1px solid #118cee;
+}
+
+.xyPrj-btn-indicator {
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 12px;
+  border-radius: 20px;
+  border: 1px solid #2374fa;
+-moz-appearance:none;
+-webkit-appearance:none;
+}
+
+.xyPrj-btn-indicator::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+  transform: rotate(45deg);
+  border-right: 1px solid #2374FA;
+  border-bottom: 1px solid #2374FA;
+}
+
+.xyPrj-btn-indicator.selected {
+  background: #E2EDFF;
+}
+.xyPrj-btn-indicator-single {
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 12px;
+  border-radius: 20px;
+  border: 1px solid #2374fa;
+-moz-appearance:none;
+-webkit-appearance:none;
+}
+
+.xyPrj-btn-indicator-single::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+}
+
+.xyPrj-btn-indicator-single.selected {
+  background: #E2EDFF;
+}
+
+.xyPrj-card {
+  margin: 20px 0;
+}
+.xyPrj-btn-marker {
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+  padding: 5px 18px;
+  font-size: 14px;
+  color: #111A34;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #C5CAD5;
+  overflow: hidden;
+}
+
+.xyPrj-btn-marker.selected {
+  color: #2F86F6;
+  border-radius: 4px;
+  border: 1px solid #2584ff;
+}
+
+.xyPrj-btn-marker.selected::after {
+  content: "";
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.xyPrj-card-footer {
+  margin-top: 30px;
+}
+
+.xyPrj-btn {
+  display: inline-block;
+  padding: 8px 33px;
+  font-size: 14px;
+  color: #5A5E66;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+}
+
+.xyPrj-btn.xyPrj-btn-primary {
+  color: #fff;
+  background: #6392E9;
+}
+
+.xyPrj-select.has_iView .ivu-select-selection,
+.xyPrj-input.has_iView .ivu-input {
+    box-shadow: 0px 2px 6px 0px rgba(29,41,78,0.15);
+    border-radius: 20px;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.xyPrj-select.has_iView .ivu-select-placeholder {
+    line-height: 40px;
+}
+
+.xyPrj-input.has_iView .ivu-icon {
+    margin-top: 3px;
+}
+
+.xyPrj-input.has_iView .ivu-input-with-suffix {
+    padding-right: 32px;
+}
+.xyPrj .ivu-select-prefix {
+    position: absolute!important;
+    right: 10px!important;
+}
+.xyPrj .ivu-select-single .ivu-select-selection .ivu-select-placeholder, 
+.xyPrj .ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+    line-height: 40px!important;
+}
+.xyPrj .ivu-select-input {
+    height: 40px!important;
+    line-height: 40px!important;
+}

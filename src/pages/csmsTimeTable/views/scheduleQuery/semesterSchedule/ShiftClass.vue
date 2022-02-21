@@ -1,0 +1,554 @@
+<template>
+  <div class="xy-content-module">
+    <Button type="primary" class="export-btn xy-primary" @click="modalExport = true">导出</Button>
+    <div class="filter-conditions">
+      <div class="check-list">
+                <Checkbox v-model="isShwowTeacher">
+                    <span class="f14" v-cloak>显示教师</span>
+                </Checkbox>
+                <Checkbox v-model="isShwowHouse">
+                    <span class="f14" v-cloak>显示教室</span>
+                </Checkbox>
+                <Checkbox v-model="isShwowTime">
+                    <span class="f14" v-cloak>显示时间</span>
+                </Checkbox>
+        </div>
+    </div>
+    <div  v-if="datatable.length>0">
+        <!-- 分表 -->
+        <div class="single" v-for="(item,index) in datatable" :key="index">
+            <span class="single-tit">{{item.FullName}}</span>
+            <table class="query-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2"></th>
+                        <th v-for="(week,windex) in weekData" :key="windex" v-cloak>{{week.title}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(sectionTd,sindex) in festList" :key="sindex">
+                        <td>
+                            <div class="class-name" v-cloak>{{sectionTd.AMorPMOrderName}}</div>
+                        </td>
+                        <td v-cloak v-for="(week,weindex) in weekData" :key="weindex">
+                            <div class="td-min">
+                                <template v-for="(crouse,cindex) in item.SloverResultList">
+                                    <div v-cloak class="attend-cont-tit"
+                                        :key="cindex"
+                                        :style="{'background': crouse.bg,'borderLeftColor':crouse.color,'color':crouse.color}"
+                                        v-if="crouse.Day == week.val && crouse.AMorPM == sectionTd.AMorPM && crouse.AMorPMOrder == sectionTd.AMorPMOrder">
+                                        <p class="nowrap" :title="crouse.SubjectName"><b>{{crouse.SubjectName}}</b></p>
+                                        <p v-if="isShwowTeacher" class="nowrap" :title="crouse.TeacherName">{{crouse.TeacherName}}</p>
+                                        <p v-if="isShwowHouse" class="nowrap" :title="crouse.HouseName">{{crouse.HouseName}}</p>
+                                        <p v-if="isShwowTime && crouse.StartTime != null && crouse.EndTime != null"
+                                        class="nowrap"
+                                        :title="crouse.StartTime.substring(0,5)+'-'+crouse.EndTime.substring(0,5)">
+                                            {{crouse.StartTime.substring(0,5)}}-{{crouse.EndTime.substring(0,5)}}
+                                        </p>
+                                    </div>
+                                </template>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div v-else class="no-data-box">
+        <img class="no-data-img" :src="require('@/assets/common/nullData.svg')"/>
+        <span class="no-data-text">
+          该搜索条件下没有结果。
+        </span>
+    </div>
+    <!-- 导出 -->
+    <Modal v-model="modalExport"
+           :transfer="false"
+           :mask-closable="false"
+           :closable="false">
+        <p slot="header">导出</p>
+        <div class="text-center" style="margin:10px 0;">
+            <Checkbox v-model="isContainWeekend">
+                <span class="f14" v-cloak>导出周六日</span>
+            </Checkbox>
+        </div>
+        <div slot="footer">
+               <Button class="xy-modal-close" @click="modalExport = false">取消</Button>
+            <Button class="xy-modal-primary" shape="circle" @click="exportFile">导出</Button>
+        </div>
+    </Modal>
+
+  </div>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        scheduleHeader: {},
+        selectSubject: [0, 0],
+        datatable: [],
+        weekData: [], // 星期数据
+        sectionLen: 0, // 节次长度
+        festList: [],
+        sectionData: [], // 节次数据
+        subjectData: [], // 课程名称
+        classData: [], // 班级名称列表
+        classTableIDs: '', // 排课方案IDS
+        studentGradeForStudentYearID: '0', // 学年ID
+        studentOrganizationID: '0', // 组织结构ID
+        isShwowTeacher: true,
+        isShwowHouse: false,
+        isShwowTime: false,
+        isHorizontal: true, // 排版
+        weekList: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+        // 导出
+        modalExport: false,
+        isContainWeekend: false // 导出周六日
+      }
+    },
+    created () {
+      this.scheduleHeader = this.$store.state.csmstimetable.scheduleQuery
+      for (var i = 0; i < this.scheduleHeader.classTable.length; i++) {
+        this.classTableIDs = this.classTableIDs + this.scheduleHeader.classTable[i].ClassTableID + ','
+      }
+      this.getClassTableTimeByClassTableList()
+      this.getSloverResultOverallTimes()
+    },
+    mounted: function () {
+    },
+    methods: {
+      // 根据排课方案获取作息时间
+      async getClassTableTimeByClassTableList () {
+        this.xy.loading()
+        let res = await this.xy.get(`${this.$store.state.apiPath}/api/ReportSessionTimeTable/GetClassTableTimes`, {
+          strClassTableIDs: this.classTableIDs
+        })
+        if (res.success) {
+          this.xy.unloading()
+          var resData = res.data.times
+          this.sectionLen = resData.length
+          this.festList = res.data.times
+          for (var j = 0; j < 7; j++) {
+            this.weekData.push({
+              title: this.weekList[j],
+              val: j
+            })
+            for (var k = 0; k < resData.length; k++) {
+              var isNextDay = false
+              if (k === 0) {
+                isNextDay = true
+              }
+              this.sectionData.push({
+                AMorPM: resData[k].AMorPM,
+                AMorPMOrder: resData[k].AMorPMOrder,
+                AMorPMOrderName: resData[k].AMorPMOrderName,
+                Day: j,
+                isNextDay: isNextDay
+              })
+            }
+          };
+        }
+      },
+
+      // 行政班课表--总课表
+      async getSloverResultOverallTimes () {
+        this.xy.loading()
+        let res = await this.xy.get(`${this.$store.state.apiPath}/api/ReportSessionTimeTable/GetSloverResultClassTimeList`, {
+          strClassTableIDs: this.classTableIDs
+        })
+        if (res.success) {
+          this.xy.unloading()
+          var resData = res.data.retList
+          var array = []
+          for (var i = 0; i < resData.length; i++) {
+            for (var j = 0; j < resData[i].SloverResultList.length; j++) {
+              var index = array.indexOf(`${resData[i].SloverResultList[j].AID}-${resData[i].SloverResultList[j].Type}`)
+              if (index > -1) {
+                resData[i].SloverResultList[j].color = this.xy.colors(index).color
+                resData[i].SloverResultList[j].bg = this.xy.colors(index).bg
+              } else {
+                resData[i].SloverResultList[j].color = this.xy.colors(array.length).color
+                resData[i].SloverResultList[j].bg = this.xy.colors(array.length).bg
+                array.push(`${resData[i].SloverResultList[j].AID}-${resData[i].SloverResultList[j].Type}`)
+              }
+            }
+          }
+          this.datatable = resData
+        }
+      },
+
+      // 导出
+      exportFile: function () {
+        this.xy.downFile(`${this.$store.state.apiPath}/api/ReportSessionTimeTable/ExportSloverResultClassTime?strClassTableIDs=
+        ${this.classTableIDs}&ContainWeekEnd=${this.isContainWeekend}
+        &showTeacher=${this.isShwowTeacher}&showHouse=${this.isShwowHouse}
+        &showTime=${this.isShwowTime}`)
+        this.modalExport = false
+      }
+    }
+  }
+</script>
+<style lang="less" scoped>
+.query-table{
+    width:100%;
+    height:100%;
+    overflow:auto;
+    border-spacing: 0;
+    text-align: center;
+}
+.horizontal-version tr:first-child th{
+    background:#6392E9;
+    color:#ffffff;
+    font-weight:bold;
+}
+.query-table thead tr th {
+    background: #F4F5F7;
+    border-right: 1px solid #fff;
+    min-width: 140px;
+    max-width: 140px;
+    padding: 10px 0;
+}
+.query-table tbody{
+    border: 1px solid #eee;
+}
+.query-table tbody tr td:nth-child(1){
+    border-right: 1px solid #eee;
+}
+.query-table tbody tr td:last-child{
+    border-right: 1px solid #eee;
+}
+.query-table td, .query-table th {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    /*border: 1px solid #eee;*/
+    min-width: 140px;
+    max-width: 140px;
+}
+.query-table thead tr th:nth-child(1){
+    // border-top-left-radius:6px;
+}
+.query-table thead tr th:last-child{
+    // border-top-right-radius:6px;
+    border-right:0px;
+}
+.table-subject{
+    width:150px;
+    height:80px;
+    border:1px solid #ddd;
+}
+.export-btn{
+    position:absolute;
+    top:11px;
+    right:0;
+}
+.check-list{
+    position:absolute;
+    top:15px;
+    right:80px
+}
+.print-btn {
+    position: absolute;
+    top: 15px;
+    right: 146px;
+}
+/*初始*/
+.schedule-tip{
+    color:#8B8B8B;
+    font-size:12px;
+    height:32px;
+    line-height:32px;
+}
+.plan-list{
+    display:flex;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    min-height:300px;
+    cursor:pointer;
+}
+.plan-list li{
+    padding: 20px 15px;
+    width:24%;
+    height: 105px;
+    margin:10px 6px;
+    background: rgba(255,255,255,1);
+    box-shadow: 0px 3px 8px 0px rgba(196,196,196,0.5);
+    border-radius: 4px;
+}
+.plan-list li.is-checked{
+    box-shadow: 0px 3px 8px 0px rgba(54,54,54,0.5);
+}
+.plan-list li:hover{
+   box-shadow: 0px 3px 8px 0px rgba(54,54,54,0.5);
+}
+.plan-list .class-table-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.plan-list .plan-span{
+    margin-top: 17px;
+}
+.plan-list .plan-span span{
+    /*width:49%;
+    display:inline-block;*/
+    color:#8B8B8B;
+}
+.schedule-change-list{
+    width:100%;
+    text-align:center;
+}
+.schedule-change-list li{
+    display:inline-block;
+}
+.schedule-change-list li .type-name{
+    padding: 0 8px 4px 8px;
+    cursor:pointer;
+}
+.schedule-change-list li .underline{
+    width:30px;
+    height:4px;
+    background:rgba(99,146,233,1);
+    margin:0 auto;
+}
+.back-btn{
+    position: absolute;
+    top: 147px;
+    right: 35px;
+    z-index: 99;
+}
+.select-class-list{
+    width:80%;
+    background:rgba(243,243,243,1);
+    border-radius:4px;
+    color:#8B8B8B;
+}
+.ivu-table th {
+    border-top: 1px solid #EBEEF5;
+    background:#f9f9f9;
+}
+.filter-conditions{
+    margin:15px 0;
+}
+.crouse-list{
+    border:1px solid #ddd;
+    margin-right:20px;
+}
+.attend-cont-tit{
+    text-align: left;
+    padding: 6px 10px;
+    max-width: 200px;
+    background: rgba(59, 134, 254, 0.1);
+    color: rgb(59, 134, 254);
+    border-radius: 0px 3px 3px 0px;
+    border-left: 3px solid rgb(59, 134, 254);
+    margin-bottom: 5px;
+}
+.class-name {
+    min-width: 140px;
+    max-width: 140px;
+}
+.class-name > span{
+    font-size: 14px;
+    color: #999;
+}
+.td-min {
+    min-width: 140px;
+    max-width: 140px;
+    min-height: 58px;
+}
+
+.single{
+    margin-bottom: 25px;
+}
+
+.single > .single-tit{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight:bold;
+    color:#444444;
+    margin-bottom:18px;
+    display: block;
+}
+.single > .single-tit > span{
+    font-size: 14px;
+    color: #999;
+}
+.single > .row-single-tit{
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.week-ul{
+    display:flex;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    padding:15px 0;
+}
+.week-ul li b{
+    font-size:16px;
+}
+.week-ul li span{
+    font-size:14px;
+    color:#000;
+    padding:2px 7px;
+    cursor:pointer;
+    margin:0 4px;
+
+}
+.week-ul li span:hover{
+    background:#2d8cf0;
+    color:#fff;
+    border-radius:4px;
+}
+.is-cur-week{
+    background:#2d8cf0;
+    color:#fff!important;
+    border-radius:4px;
+}
+.week-con{
+    background:#fff;
+    width: 100%;
+}
+
+/*内容页*/
+#Schedule{
+    margin-top:20px;
+}
+.left-options{
+    /*width:250px;*/
+    margin-right:15px;
+}
+.left-options .options-header{
+    border-radius:4px;
+    padding:0 10px;
+}
+.left-options .options-header .radio-list {
+    padding: 10px 0;
+    border-bottom: 1px solid #5685DC;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.left-options .options-header .check-list{
+     padding:10px 0;
+}
+
+.left-options .options-body {
+    border-radius: 4px;
+    padding: 10px 10px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+.left-options .options-body .search-opt {
+    border-bottom: 1px solid #5685DC;
+    padding-bottom: 15px;
+}
+.left-options .options-body .schedule-subject:first-child{
+    font-size:14px;
+    font-weight:bold;
+     margin-left:0px;
+}
+/*总课表*/
+.left-options .options-body .total-subject {
+    margin-left: 20px;
+}
+/*教学班学生*/
+.education-table{
+    width:100%;
+    height:100%;
+    overflow:auto;
+    border-spacing: 0;
+}
+.education-table tr{
+    border-bottom:1px solid #EBEEF5;
+}
+.education-table tr:hover{
+    background:#F5F7FA;
+}
+.education-table thead tr th {
+    color: #909399;
+    min-width: 140px;
+    text-align: left;
+}
+.education-table tbody tr td {
+    color: #606266;
+    min-width: 140px;
+}
+.education-table td,.education-table th{
+    padding: 14px 10px;
+}
+.row-single-tit {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+    margin-right: 15px;
+}
+
+.dis-td-bg {
+    background: rgb(198, 198, 198) !important;
+    border-left-color: rgb(135, 135, 135) !important;
+    color: rgb(135, 135, 135) !important;
+}
+
+.container {
+    width: 100%;
+    max-height: 800px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#left-div {
+    width: 140px;
+    float: left;
+}
+
+#left-div1 {
+    width: 100%;
+}
+
+#left-div2 {
+    width: 100%;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+#left-table2 {
+    margin-bottom: 8px;
+}
+#left-table2 td {
+    background: #f9f9f9;
+}
+#right-div {
+    float: left;
+    width: calc(100% - 140px);
+}
+
+#right-div1 {
+    width: 100%;
+    overflow: hidden;
+}
+
+#right-div2 {
+    width: 100%;
+    max-height: 600px;
+    overflow: auto;
+}
+
+#right-table1 {
+    width: 100%;
+}
+
+#right-table2 {
+    overflow: auto;
+}
+#right-table1 tr th:first-child{
+    border-top-left-radius:0;
+}
+
+</style>

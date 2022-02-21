@@ -1,0 +1,577 @@
+.left-data {
+  padding: 15px 15px;
+  height: 500px;
+  overflow: auto;
+  width: 150px;
+}
+
+.right-data {
+  padding-left: 20px;
+  border-left: 1px solid #d8d8d8;
+  width: 100%;
+}
+
+.select {
+  text-align: center;
+  font-size: 0;
+  /*margin: 10px 0 26px;*/
+}
+
+.select span:first-child {
+  padding: 6px 25px;
+  color: #4285f4;
+  border-radius: 15px 0 0 15px;
+  font-size: 12px;
+  border: 1px solid #4285f4;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.select .active {
+  background: #4285f4;
+  color: white !important;
+}
+
+.select span:last-child {
+  padding: 6px 25px;
+  color: #4285f4;
+  border-radius: 0 15px 15px 0;
+  font-size: 12px;
+  border: 1px solid #4285f4;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.select span:hover {
+  background: #4285f4;
+  color: white;
+}
+
+.selected-class {
+  font-size: 12px;
+  color: rgba(144, 147, 153, 1);
+}
+
+/*课程设置*/
+.take-course-subjcet {}
+
+.take-course-subjcet i {
+  cursor: pointer;
+}
+
+.take-course-content {
+  margin-top: 16px;
+}
+
+.content-header {
+  width: 100%;
+  line-height: 50px;
+  height: 50px;
+  background: rgba(250, 250, 250, 1);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 0 12px;
+  overflow: hidden;
+  display: block;
+}
+
+.content-header input[type='radio'] {
+  display: none;
+}
+
+.content-header .span-radio {
+  width: 14px;
+  height: 14px;
+  line-height: 1;
+  margin-top: -2px;
+  margin-right: 5px;
+  background-color: #f7f7f7;
+  border: 1px solid #c1c1c1;
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.content-header input:checked+span:after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 2px 2px 3px 2px;
+  background-color: #4285f4;
+  border-radius: 100%;
+
+}
+
+.content-body {
+  border: 1px solid #eaeaea;
+  border-bottom: none;
+}
+
+.content-body .body-tit {
+  padding: 0 12px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.content-body .body-tit .crouse-list {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.content-body .body-tit .crouse-list h3 {
+  /* font-weight: bold; */
+  font-size: 14px;
+  flex: 1;
+}
+
+.content-body .body-tit .crouse-children-list li {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.content-body .body-tit .crouse-children-list li:last-child {
+  border-bottom: none;
+}
+.crouse-children-list .course-subjcet-layer{
+  display: flex;
+justify-content: space-between;
+}
+.crouse-children-list .course-subjcet-layername {
+  font-size: 16px;
+}
+
+.crouse-children-list .trash-span i {
+  font-size: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #6392E9;
+}
+
+.content-footer {
+  height: 50px;
+  line-height: 50px;
+  color: #4285f4;
+  font-size: 16px;
+  border: 1px solid #eaeaea;
+  border-top: none;
+}
+
+.content-footer i {
+  font-size: 20px;
+  margin-right: 5px;
+  vertical-align: middle
+}
+
+.content-footer span {
+  cursor: pointer;
+}
+
+.take-course-footer {
+  margin: 15px 0 15px 0;
+
+}
+
+.take-course-footer .add-group {
+  margin-bottom: 12px;
+  width: 80px;
+  margin: 10px auto;
+}
+
+.take-course-footer .add-group i {
+  font-size: 20px;
+}
+
+.take-course-footer .add-group p {
+  font-size: 16px;
+}
+
+.modal-crouses {
+  max-height: 300px;
+  overflow-y: scroll;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.modal-crouses li {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.65);
+  background: rgba(245, 245, 245, 1);
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  width:90px;
+  height:40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.modal-crouses li:hover {
+  background: rgba(230, 247, 255, 1);
+  border: 1px solid rgba(65, 150, 255, 1);
+  color: rgba(65, 150, 255, 1);
+}
+
+li.is-active {
+  background: rgba(230, 247, 255, 1);
+  border: 1px solid rgba(65, 150, 255, 1);
+  color: rgba(65, 150, 255, 1);
+}
+
+.take-at-most span {
+  color: #000;
+}
+
+/*选课规则*/
+.f14 {
+  font-size: 14px;
+}
+
+.describe {
+  margin: 16px 0;
+  color: #8B8B8B;
+}
+
+.rule-header {
+  border-bottom: 2px solid #6392E9;
+  padding-bottom: 5px;
+}
+
+.rule-category {
+  height: 32px;
+}
+
+.rule-category li {
+  display: inline-block;
+  /*padding:0 8px;*/
+  cursor: pointer
+}
+
+.rule-category li span {
+  color: #444444;
+  cursor: pointer;
+  height: 38px;
+  display: inline-block;
+  line-height: 38px;
+  padding: 0 13px;
+}
+
+.li-active span {
+  background: rgba(99, 146, 233, 1);
+  border-radius: 8px 8px 0px 0px;
+  color: #fff !important;
+}
+
+
+
+/*选课时间*/
+.select-time {
+  width: 600px;
+  margin: 30px auto 0 auto;
+}
+
+.select-time .label {
+  margin-bottom: 20px;
+}
+
+.select-time .label label {
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.select-time .note-editor {
+  display: inline-block;
+}
+
+.label>.noRequired::before {
+  content: "*";
+  display: inline-block;
+  margin-right: 4px;
+  line-height: 1;
+  font-size: 14px;
+  color: transparent;
+}
+
+.label>.required::before {
+  content: "*";
+  display: inline-block;
+  margin-right: 4px;
+  line-height: 1;
+  font-size: 14px;
+  color: #ed4014;
+}
+
+/*连选设置*/
+.EvenSelected-modal {
+  font-size: 14px;
+
+}
+
+.EvenSelected-modal .ivu-radio-group {
+  height: 50px;
+}
+
+.EvenSelected-modal .ivu-radio-wrapper {
+  height: auto;
+  line-height: 25px;
+}
+
+
+
+
+
+
+/*互斥课程*/
+.CourseMutex-ul {
+  margin: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.CourseMutex-ul li {
+  width: 303px;
+  height: 144px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(241, 241, 241, 1);
+  box-shadow: 0px 1px 3px 0px rgba(170, 170, 170, 0.4);
+  border-radius: 12px;
+  margin: 20px;
+  position: relative;
+}
+
+.CourseMutex-li-active {
+  border: 1px solid #4196FF !important;
+}
+
+.layere-del-icon {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.layere-del-icon:hover {
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(165, 165, 165, 0.5);
+  border-radius: 4px;
+}
+
+.layere-del-icon:hover i {
+  color: #FF7E33 !important;
+}
+
+.CourseMutex-body {
+  height: 88px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.CourseMutex-body span {
+  color: #333333;
+  font-weight: bold;
+  margin: 0 9px;
+  font-size: 14px;
+}
+
+.CourseMutex-footer {
+  height: 35px;
+  line-height: 35px;
+  background: #F9FAFB;
+  color: #999999;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+}
+
+.CourseMutex-footer:hover {
+  color: #fff;
+  background: #4196FF;
+}
+
+.footer-active {
+  color: #fff !important;
+  background: #4196FF !important;
+}
+
+/*连选设置*/
+.EvenSelected-ul {
+  margin: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.EvenSelected-ul li {
+  width: 303px;
+  height: 144px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(241, 241, 241, 1);
+  box-shadow: 0px 1px 3px 0px rgba(170, 170, 170, 0.4);
+  border-radius: 12px;
+  margin: 20px;
+  position: relative;
+}
+
+.EvenSelected-li-active {
+  border: 1px solid #4196FF !important;
+}
+
+
+.EvenSelected-body {
+  height: 88px;
+  padding: 0 14px;
+  margin-top: 20px;
+}
+
+.EvenSelected-body .body-info {
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.EvenSelected-body .sub-name {
+  color: #333333;
+  font-weight: bold;
+  margin: 0 9px;
+  font-size: 14px;
+}
+
+.EvenSelected-body .section-num {
+  color: #999999;
+  font-size: 14px;
+}
+
+.EvenSelected-footer {
+  height: 35px;
+  line-height: 35px;
+  background: #F9FAFB;
+  color: #999999;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+}
+
+.EvenSelected-footer:hover {
+  color: #fff;
+  background: #4196FF;
+}
+
+/* ----------------------------选课统计---------------------- */
+/* 筛选提交 */
+.progress-title {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+/* 单科统计 */
+.chooseClass {
+  width: 92%;
+  margin: 0 auto;
+}
+
+.chooseClass .ivu-checkbox-group {
+  display: inline-block;
+}
+
+
+/* 组合统计表头无背景色 */
+.thead-bg .ivu-table th {
+  background: transparent !important;
+}
+
+/* .ivu-table th {
+  border-top: 1px solid #EBEEF5;
+  background: #f9f9f9;
+}
+.ivu-table td,
+.ivu-table th {
+  border-left: 1px solid #EBEEF5;
+  border-right: 1px solid #EBEEF5;
+} */
+
+
+.selectResultModal .ivu-modal-body {
+  min-height: 200px;
+}
+
+/* 发布结果 */
+
+.PublishResult h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 5px;
+}
+
+.PublishResult img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.PublishResult .info {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 5px;
+}
+
+.publish-btn {
+  margin-top: 10px;
+}
+
+.btn {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1890FF;
+  cursor: pointer;
+  padding: 0 35px;
+  border: 1px solid transparent;
+}
+
+.disabledBtn {
+  color: #909399;
+}
+
+/* 公共样式 */
+.set-box .add-btn {
+  color: #4196FF;
+  font-size: 12px;
+  padding: 3px 10px;
+  cursor: pointer;
+  width: 88px;
+  height: 30px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(65, 150, 255, 1);
+  border-radius: 16px;
+}
+
+.content-footer>.add-btn {
+  border: none !important;
+  background: transparent !important;
+}
+
+.go-crouse-set-box .del-icon {
+  color: #6392E9;
+  font-size: 20px;
+  cursor: pointer;
+}
+#crouseRules{
+  padding: 10px 0;
+}

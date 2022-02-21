@@ -1,0 +1,123 @@
+#rule {
+  display: flex;
+  position: relative;
+  top: -10px;
+}
+#rule .ruleLeft {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  width: 120px;
+  border-right: 1px solid #eee;
+  min-height: 605px;
+}
+#rule .ruleLeft .adjust-flex {
+  position: relative;
+  right: -1px;
+  margin-bottom: 14px;
+}
+#rule .ruleLeft .adjust-align {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  text-align: right;
+  padding-right: 10px;
+}
+#rule .ruleLeft .active {
+  border-right: 2px solid #1677FF;
+  color: #1677FF;
+}
+#rule .ruleRight {
+  width: 100%;
+  border: 0;
+}
+#rule .ruleRight .fen {
+  width: 616px;
+  margin: 40px auto 0;
+}
+#rule .ruleRight .fen .exam-tit {
+  color: #666;
+  font-size: 14px;
+  line-height: 22px;
+}
+#rule .ruleRight .exam-case {
+  border: 0;
+}
+.adjust-flex {
+  display: flex;
+  justify-content: center;
+}
+.adjust-align {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+.adjust-align.active {
+  color: #4196ff;
+}
+.adjust-align-underline {
+  width: 30px;
+  margin: 3px auto 0;
+  border-radius: 20px;
+  height: 4px;
+  background: #4196ff;
+}
+/* 学生分考场规则 */
+.exam-student > .exam-item {
+  display: block;
+}
+.exam-student > .exam-item > .exam-tit {
+  color: #333333;
+  margin-top: 30px;
+  margin-bottom: 18px;
+}
+.exam-student > .exam-item > .exam-box label {
+  margin-right: 38px;
+}
+.exam-student > .exam-foot {
+  margin-top: 45px;
+}
+/* 教师排监考规则 */
+.exam-teacher {
+  padding: 20px;
+}
+.exam-teacher .exam-case:nth-child(2) {
+  border-bottom: 1px solid #e8e8e8 !important;
+  margin-bottom: 26px;
+}
+.exam-teacher .exam-case:nth-child(2) > .exam-case-cont {
+  padding: 16px 0 32px !important;
+}
+.exam-case > .exam-case-tit {
+  font-weight: bold;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 24px;
+  font-size: 16px;
+}
+.exam-case:nth-child(n+2) > .exam-case-cont {
+  padding: 20px 0 !important;
+}
+.model-tit {
+  font-size: 14px;
+  background: rgba(65, 150, 255, 0.1);
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.model-cont {
+  height: 300px;
+  overflow: hidden;
+}
+.addBtn {
+  width: 100%;
+  line-height: 32px;
+  border: 1px dashed #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.addBtn:hover {
+  color: #1677FF;
+  border-color: #1677FF;
+}

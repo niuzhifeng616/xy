@@ -1,0 +1,197 @@
+.mb5{
+  margin-bottom:10px;
+}
+.select-box{
+  margin: 20px 0;
+  border: 1px solid;
+  border-radius:0 0 8px 8px;
+  border-color: rgba(107,164,254,0.3);
+}
+.select-box .box-header{
+  /*padding:10px 0px;
+  background: rgba(107,164,254,0.1);*/
+}
+.select-box .box-header h1{
+  /*padding:5px 10px;*/
+  font-size:16px;
+  font-weight:bold;
+  color:#6BA4FE;
+  /*display:inline-block;*/
+}
+.box-bodys ul{
+  display:flex;
+  justify-content:flex-start;
+  flex-wrap:wrap;
+}
+.box-bodys ul li{
+  width: 240px;
+  min-height:180px;
+  border: 1px solid #d4e4ff;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s;
+  position: relative;
+  box-shadow: 0px 3px 16px 0px rgba(111, 165, 255, 0.4);
+}
+.box-bodys .teacher-name{
+   height: 25px;
+  line-height: 25px;
+}
+.box-bodys .week-name{
+  height: 25px;
+  line-height: 25px;
+}
+.box-bodys .selected-perpson{
+  height: 25px;
+  line-height: 25px;
+}
+
+.box-bodys .select-content{
+  /*height:118px;*/
+  /*padding:10px;*/
+}
+.box-bodys .is-active{
+  min-height: 98px;
+  background-image: -moz-linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 55%, rgb(18,113,255) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+  background-image: linear-gradient( 0deg, rgb(44,193,225) 0%, rgb(31,153,240) 49%, rgb(18,113,255) 100%);
+  box-shadow: 0px 3px 9px 0px rgba(111, 165, 255, 0.45);
+  color: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.box-bodys .is-active .introduce-btn span{
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+}
+.attend-cont-tit{
+  text-align: left;
+  padding-left: 10px;
+  max-width: 200px;
+  border-radius: 0px 3px 3px 0px;
+  border-left-width:4px;
+  border-left-style:solid;
+  margin-bottom: 2px;
+}
+.is-no-chose{
+  box-shadow: none;
+  border: 1px solid #ddd;
+  color: #bbb;
+}
+.is-no-chose .subject-name{
+   color: #bbb!important;
+}
+/* ----------selectCourse.css start */
+.instructions{
+
+}
+.instructions-content {
+  background: #F7F7F7;
+  border-radius: 6px;
+  padding: 10px;
+  color: #666666;
+  font-size: 14px;
+}
+.select-box {
+  /*width:100%;*/
+  margin:15px 0;
+  border: 1px solid rgba(182,203,255,1);
+  border-radius: 4px;
+}
+.box-header {
+  /*height: 62px;
+  line-height:62px;*/
+  background: rgba(240,246,255,1);
+  border-radius: 4px;
+  padding:0 30px;
+  padding:10px 15px;
+}
+.box-header .header-left {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(99,146,233,1);
+}
+.box-header .header-right {
+  font-size: 14px;
+  font-weight: normal;
+  color: rgba(102,102,102,1)
+}
+.box-bodys{
+ margin-bottom:20px;
+}
+.box-bodys .first-ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.box-bodys .first-ul > li {
+  width: 190px;
+  height: 206px;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 2px 12px 0px rgba(99,146,233,0.44);
+  border-radius: 8px;
+  margin: 20px 0 0 14px;
+  cursor:pointer;
+  position:relative;
+}
+.box-bodys .first-ul > li:last-child{
+  margin-right:10px;
+}
+.box-bodys .body-header {
+  width: 100%;
+  height: 57px;
+  line-height: 57px;
+  text-align: center;
+  position: relative;
+}
+.box-bodys .subject-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
+  width: 80%;
+  margin: 0 auto;
+}
+.box-bodys .is-select-sub {
+  background: rgba(99,146,233,1);
+  border-radius: 6px 6px 0 0;
+}
+.box-bodys .is-select-sub .subject-name {
+  color: #fff;
+}
+
+.box-bodys .select-img {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+.detail-content{
+  margin:0 12px;
+}
+.detail-content .teacher-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(68,68,68,1);
+  margin-top:5px;
+  height:21px;
+}
+.detail-content .common-info {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(153,153,153,1);
+  margin-top: 5px;
+  height: 21px;
+}
+.introduce-btn {
+  text-align: center;
+  height: 25px;
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  margin-left:-32px;
+}
+.col-mber {
+  color: #6392E9;
+}

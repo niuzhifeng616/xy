@@ -1,0 +1,98 @@
+/* -----------带有左侧线和圆点的分区样式（课程设置 查看课表） start----------- */
+.area-part{
+    margin-top: 20px;
+    border-top: 1px solid #E8E8E8;
+}
+.area-item{
+    display: flex;
+}
+/* 左侧部分 */
+.area-item .area-left{
+    width: 140px;
+    min-width: 140px;
+    padding-top:20px;
+    padding-right: 15px;
+    text-align: right;
+    border-right: 2px solid rgba(0,0,0,0.09);
+    color: rgba(0,0,0,0.65);
+    position: relative;
+}
+.area-item:first-child .area-left{
+    padding-top:30px;
+}
+.area-item .area-left .top{
+    color: #4196FF;
+    color: rgba(0,0,0,0.65);
+    margin-bottom: 5px;
+}
+.area-item .area-left > span.dot{
+    display: block;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #1890FF;
+    border: 2px solid rgba(0,0,0,0.09);
+    background: #fff;
+    border-radius: 50%;
+    position:absolute;
+    right: -5px;
+    top: 27px;
+}
+.area-item:first-child .area-left > span{
+    top: 37px;
+}
+.area-item .area-left .bottom{
+    font-size: 12px;
+    color: rgba(0,0,0,0.45);
+    margin-bottom: 10px;
+}
+.area-item .area-left .buttons{
+
+}
+/* 右侧部分 */
+.area-item .area-right{
+    width: calc(100% - 110px);
+    padding-top: 20px;
+    padding-left: 25px;
+
+}
+.area-item:first-child .area-right{
+    padding-top:30px;
+}
+/* -----------带有左侧线和圆点的分区样式 end----------- */
+
+/* -----------显示左侧tab的分区样式(选课规则 数据核查) start----------- */
+.areas-part{
+    border-top: 1px solid #E8E8E8;
+    display: flex;
+    background: #fff;
+}
+
+/* 左侧部分 */
+.areas-part .areas-left{
+    width: 100px;
+    border-right: 1px solid rgba(0,0,0,0.09);
+    padding-top: 5px;
+}
+.areas-part .areas-left .tab-ul{
+    color:rgba(0,0,0,0.65);
+}
+.areas-part .areas-left .tab-ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:10px 0;
+    height: 35px;
+    cursor: pointer;
+}
+.areas-part .areas-left .tab-ul li.li-active{
+    color:#4196FF;
+    border-right: 2px solid #4196ff;
+    font-weight: 700;
+}
+/* 右侧部分 */
+.areas-part .areas-right{
+    width: calc(100% - 100px);
+    padding-left: 25px;
+    min-height: 650px;
+}
+/* -----------显示左侧tab的分区样式 end----------- */

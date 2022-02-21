@@ -1,0 +1,38 @@
+#FuncInfo {
+  overflow: hidden;
+}
+.adjust-flex {
+  display: flex;
+  flex-direction: column;
+  width: 148px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  padding-top: 12px;
+  position: relative;
+  right: -1px;
+}
+.adjust-flex span {
+  display: inline-block;
+  line-height: 38px;
+  padding-right: 23px;
+}
+.adjust-align {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 14px;
+}
+.adjust-align.active {
+  color: #4196ff;
+  border-right: 2px solid #4196ff;
+}
+.setting-main {
+  display: flex;
+  height: 800px;
+}
+.main-body {
+  width: 100%;
+  padding: 20px;
+  border-left: 1px solid #e8e8e8;
+}

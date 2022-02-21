@@ -1,0 +1,86 @@
+﻿/*tab*/
+.title-con{
+    background:#fff;
+    padding:0 10px;
+    margin-bottom:20px;
+}
+.title-con .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.85);
+    padding: 10px 0 0;
+}
+.title-tabs {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+}
+.title-tabs li {
+    color: rgba(0,0,0,0.85);
+    padding: 0 3px; 
+    line-height: 50px;
+    cursor:pointer;
+}
+.title-tabs li.current{
+    border-bottom: 2px solid #4196FF;
+    color: #4196FF;
+}
+/*内容部分-通用*/
+.con-model {
+    border-radius: 4px;
+    background: #fff;
+}
+.con-model .item-title {
+    line-height: 54px;
+    font-size: 16px;
+    color: rgba(0,0,0,0.85);
+    padding-left: 20px;
+    border-bottom: 1px solid #E9E9E9;
+    font-weight: bold;
+}
+.con-model .item-title.no-border {
+    border: none;
+}
+.con-model .item-con {
+    padding: 0 20px 20px;
+    height: calc(100% - 55px);
+}
+.no-dt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 55px);
+}
+.no-dt i {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #cecece;
+}
+.no-dt p {
+    color: rgba(0,0,0,0.25);
+    font-size: 16px;
+}
+.tab-title {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgb(213, 213, 213);
+}
+.tab-title > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88px;
+    height: 40px;
+    border-radius: 4px 4px 0px 0px;
+    margin-right: 2px;
+    border: 1px solid rgba(217,217,217,1);
+    color: rgba(0,0,0,0.65);
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+.tab-title > li.checked {
+    cursor: default;
+    background: #FFF;
+    border-bottom: 1px solid #FFF;
+}

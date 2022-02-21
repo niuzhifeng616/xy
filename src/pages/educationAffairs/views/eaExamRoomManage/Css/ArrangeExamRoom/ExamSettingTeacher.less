@@ -1,0 +1,102 @@
+﻿
+.teacher-box {
+    width: 225px;
+    height: 205px;
+    float: left;
+    border: 1px solid rgba(217,217,217,1);
+    border-radius: 4px;
+    margin: 22px 22px 22px 0;
+    overflow: hidden;
+    position: relative;
+}
+.teacher-box-bg {
+    border: 1px solid rgba(65,150,255,1);
+}
+
+.teacher-box > div {
+    cursor:pointer;
+}
+.teacher-box > div > .teacher-checked {
+    content: "";
+    position: absolute;
+    top: -7px;
+    right: -25px;
+    border-width: 0 38px 38px;
+    border-style: solid;
+    border-color: transparent transparent rgba(249,249,249,1);
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.teacher-box > div > .teacher-checked-bg {
+    border-color: transparent transparent #4196FF;
+}
+    /*.teacher-box > .teacher-checked {
+        display: block;
+        text-align: right;
+    }*/
+.teacher-box > div > .teacher-firstname {
+    width: 66px;
+    height: 66px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 66px;
+    border-radius: 50%;
+    background: linear-gradient(0deg,rgba(57,104,255,0.1) 0%,rgba(65,150,255,0.1) 100%);
+    color: #3D7DFF;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .teacher-box > div > .teacher-firstname:hover {
+        transition: all 0.3s;
+        background: linear-gradient(0deg,rgba(57,104,255,0.15) 0%,rgba(65,150,255,0.15) 100%);
+    }
+
+.teacher-box > div > .firstname-bg {
+    background: linear-gradient(0deg,rgba(57,104,255,1) 0%,rgba(65,150,255,1) 100%);
+}
+.teacher-box > div > .teacher-name {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 14px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.teacher-box > div > .teacher-schoolnumber {
+    min-width: 129px;
+    max-width: 150px;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.teacher-box > .teacher-del {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 0px 0px 4px 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+    .teacher-box > .teacher-del:hover {
+        transition: all 0.3s;
+        background: #f5f5f5;
+        color: #FF8C8C;
+    }
+
+
+
+
+
+
+
+
+
+

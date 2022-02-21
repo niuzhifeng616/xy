@@ -1,0 +1,68 @@
+﻿/*等级分分析*/
+.level-analysis {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.level-analysis > div {
+  margin-bottom: 20px;
+}
+.mod1 {
+  width: 100%;
+  height:340px;
+}
+.mod2 {
+  width: 335px;
+  height: 405px;
+}
+.mod3 {
+  width: calc(100% - 355px);
+  height: 405px;
+}
+.mod4 {
+  width: calc(50% - 10px);
+}
+.mod5 {
+  width: calc(50% - 10px);
+}
+.mod2 .score-base {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0;
+}
+.mod2 .score-base li{
+  margin-bottom: 33px;
+}
+.mod2 .score-base li > span {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mod2 .score-base li > span i{
+  color: #fff;
+  font-size: 24px;
+}
+.mod2 .score-base li:nth-child(1) > span,
+.mod2 .score-base li:nth-child(3) > span {
+  background-color: #597EF7;
+}
+.mod2 .score-base li:nth-child(2) > span,
+.mod2 .score-base li:nth-child(4) > span {
+  background-color: #36CFC9;
+}
+.mod2 .score-base li > div {
+  padding-left: 58px;
+  color: rgba(0,0,0,0.85);
+  font-size:16px;
+  font-weight:bold;
+}
+.mod2 .score-base li > div > span {
+  color: rgba(0,0,0,0.45);
+  margin: -4px 0 4px;
+  display: block;
+  font-weight:normal;
+}

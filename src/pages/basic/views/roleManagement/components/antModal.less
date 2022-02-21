@@ -1,0 +1,182 @@
+ // 选择学生/教师
+ .head-icon {
+     display: inline-block;
+     vertical-align: middle;
+     width: 26px;
+     height: 26px;
+     border-radius: 50%;
+     overflow: hidden;
+     background-color: #4196ff;
+     text-align: center;
+     font-size: 12px;
+     line-height: 26px;
+     color: #fff;
+     margin-right: 5px;
+     min-width: 26px;
+ }
+
+ .woman {
+     background-color: #FF81AC !important;
+ }
+
+ // 选择教室的icon
+ .icon-box {
+     display: inline-block;
+     color: #fff;
+     width: 25px;
+     height: 25px;
+     background: #4db6ac;
+     border-radius: 50%;
+     text-align: center;
+     line-height: 25px;
+     .iconfont {
+         font-size: 12px;
+     }
+ }
+
+ .input-box {
+     padding-bottom: 15px;
+     width: calc(100% - 24px);
+ }
+
+ /deep/.ant-tree li span.ant-tree-iconEle{
+     margin-right: 5px;
+ }
+.set-modal{
+    width: 100%;
+    padding: 10px 15px;
+    height: 500px;
+    border: 1px solid #eaeaea;
+    .setTeacherBox {
+        overflow: hidden;
+        // border: 1px solid #eaeaea;
+        .ant-tree {
+            min-height: 435px;
+            max-height: 435px;
+            overflow: auto;
+        }
+    }
+    .nodata,.loading-box {
+       height: 470px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+   .exchange{
+    margin: -3px 5px 0 5px;
+   }
+}
+
+
+ /deep/.ant-modal {
+     min-width: 500px;
+
+     .ant-modal-body {
+         padding-top: 0;
+         padding-bottom: 0;
+         padding-right: 0;
+
+         .left {
+             width: 50%;
+             border-right: 1px solid #e8e8e8;
+             padding-top: 15px;
+
+             .ant-tree {
+                 min-height: 525px;
+                 max-height: 525px;
+                 overflow: auto;
+
+                 .ant-tree-node-content-wrapper {
+                     // width: 29px;
+                     height: 29px;
+                     line-height: 29px;
+
+                     &:hover {
+                         background-color: #f5f5f5;
+                     }
+                 }
+             }
+
+             .loading-tree {
+                 height: 100%;
+                 width: 100%;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+             }
+         }
+
+         .right {
+             padding-top: 15px;
+             padding-right: 0;
+             width: 50%;
+
+             .tag {
+                 margin-left: 10px;
+                 max-width: 80%;
+                 overflow: hidden;
+                 white-space: nowrap;
+                 text-overflow: ellipsis;
+                 display: inline-block;
+             }
+
+             .room-overflow {
+                 min-height: 525px;
+                 max-height: 525px;
+                 overflow: auto;
+             }
+
+             .count-room {
+                 font-size: 14px;
+                 font-weight: 400;
+                 color: rgba(0, 0, 0, 0.45);
+                 line-height: 32px;
+                 padding-left: 24px;
+                 padding-bottom: 15px;
+             }
+
+             .right-tip {
+                 margin-top: 46px;
+             }
+
+             .room {
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
+                 padding: 7.5px 0 7.5px 24px;
+
+                 &:hover {
+                     background: #f5f5f5;
+                 }
+
+                 div {
+                     display: flex;
+                     align-items: center;
+                     width: 80%;
+                 }
+
+
+
+                 .del-btn {
+                     width: 34px;
+                     color: #CFCFCF;
+                     cursor: pointer;
+                 }
+             }
+
+         }
+
+         .nodata {
+             text-align: center;
+             line-height: 525px;
+             height: 525px
+         }
+
+         .loading-box {
+             height: 525px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+         }
+     }
+ }

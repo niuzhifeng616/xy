@@ -1,0 +1,315 @@
+﻿.object-content {
+    margin: 30px 0px;
+}
+.objects-title {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.objects-exam-info-name {
+    color: rgba(0, 0, 0, 0.65);
+}
+ .objects-exam-info p {
+    color: rgba(0, 0, 0, 0.85); 
+ }
+.object-title {
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    padding: 0px 30px;
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+}
+
+.object-box {
+    border-width: 0px 1px 1px;
+    border-style: solid;
+    border-color: #eee;
+}
+
+.object-box-project {
+    height: 40px;
+    line-height: 40px;
+}
+
+.object-box-class {
+    margin-top: 12px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.object-box-number {
+    position: absolute;
+    right: 17px;
+}
+
+.object-box-content-child {
+    padding: 10px;
+    height: 128px;
+}
+
+.object-box-content {
+    margin: 20px 0px 20px 20px;
+    width: 300px;
+    height: 170px;
+    border: 1px solid #EBEAEB;
+    border-radius: 4px;
+    background: #fff;
+    position: relative;
+}
+
+.object-box-project-img {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px 0px rgba(48, 126, 244, 0.18);
+    background: #fff;
+}
+
+.object-box-project-name {
+    font-size: 14px;
+    margin-left: 15px;
+    font-weight: bold;
+    width: 140px;
+}
+
+.object-box-class-title {
+    color: #999;
+    font-size: 14px;
+}
+
+.object-box-btn {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    background: #FBFBFB;
+    border-radius: 4px;
+}
+
+.object-box-btn span {
+    font-size: 14px;
+    color: #999;
+    flex: 1;
+}
+
+.icon-del:hover,
+.icon-del:hover>span {
+    cursor: pointer;
+    color: #FF8787;
+}
+
+.icon-edit:hover,
+.icon-edit:hover>span {
+    cursor: pointer;
+    color: #4196FF;
+}
+
+.object-box-btn span.not-allowed {
+    color: #ccc;
+}
+
+.icon-del.not-allowed,
+.icon-del.not-allowed>span {
+    cursor: not-allowed;
+    color: #ccc;
+}
+
+.icon-edit.not-allowed,
+.icon-edit.not-allowed>span {
+    cursor: not-allowed;
+    color: #ccc;
+}
+
+.down-icon {
+    color: rgb(65, 150, 255);
+    font-size: 26px;
+    line-height: 60px;
+    transition: all 0.5s;
+}
+
+.down-icon.up {
+    transition: all 0.5s;
+    transform: rotate(-180deg);
+}
+
+.objects-subject-list {
+    padding: 10px;
+    background: rgba(65, 150, 255, 0.1);
+    margin: 10px 5px;
+    border-radius: 4px;
+}
+
+.objects-subject-list-child {
+    border-bottom: 1px solid rgba(65, 150, 255, 0.1);
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+}
+
+.objects-subject-list-child-check {
+    width: 106px;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.item-checked,
+.childItem-checked {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 1px solid #dcdee2;
+    border-radius: 2px;
+    transition: all 0.3s;
+    vertical-align: middle;
+    position: relative;
+}
+
+.item-checked .item-checked-icon,
+.childItem-checked .childItem-checked-icon {
+    position: absolute;
+    top: 1px;
+}
+
+.item-checked.active,
+.childItem-checked.active {
+    transition: all 0.3s;
+    border: 1px solid #4196ff;
+    background: #4196ff;
+}
+
+.table-auto {
+    height: 516px;
+    overflow-y: auto;
+}
+
+.speed-table {
+    width: 100%;
+}
+
+.speed-table thead th {
+    color: #7f7f7f;
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+}
+
+.speed-table tbody tr td {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+/* 选择参与评价的考试 */
+.select-box {
+    width: 100%;
+}
+
+.select-box>.select-tit {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.select-box>.select-cont {
+    /*width: 98%;*/
+    height: 130px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 3px solid #acc2f1;
+    padding: 20px;
+    background: #f5faff;
+    overflow: hidden;
+}
+
+.select-box>.select-cont>.select-region {
+    margin: 0 73px;
+    margin-top: 10px;
+}
+
+.select-box>.select-cont>.select-region>.select-top {
+    display: block;
+    width: 400px;
+    margin-bottom: 5px;
+}
+
+.select-box>.select-cont>.select-region>.select-top>.select-examin {
+    display: inline-block;
+}
+
+.select-box>.select-cont>.select-region>.select-top>.select-btn {
+    display: inline-block;
+}
+
+
+.dashed-line {
+    margin: 30px 0;
+    border-top: 3px dashed #ccc;
+    margin-bottom: 20px;
+}
+
+.evalua-course {
+    overflow: hidden;
+}
+
+.evalua-course>.evalua-top>.evalua-tit {
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.edit-student-info-title {
+    font-size: 16px;
+    margin: 20px 14px 10px;
+}
+
+.edit-student-info-title-key {
+    color: #7f7f7f;
+}
+
+.edit-student-info-title-name {
+    margin-right: 20px;
+}
+
+.edit-student {
+    width: 174px;
+    height: 60px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 0px 10px;
+    background: #fff;
+    box-shadow: 0px 3px 12px 0px rgba(202, 202, 202, 0.5);
+    margin: 10px;
+}
+
+.trash-icon {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    transition: all .3s;
+    border-radius: 50%;
+}
+
+.trash-icon:hover {
+    background: rgba(255, 149, 0, 0.2);
+    transition: all .3s;
+}
+
+.trash-icon:hover .icon-trash {
+    color: #ff9500;
+}
+
+.icon-trash {
+    font-size: 16px;
+    color: #D7D7D7;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}

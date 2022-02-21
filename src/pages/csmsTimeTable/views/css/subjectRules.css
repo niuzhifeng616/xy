@@ -1,0 +1,57 @@
+.xy-content-body {
+  display: flex;
+}
+.xy-content-body .left-tab {
+  border-right: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
+  min-width: 100px;
+}
+.xy-content-body .left-tab .subjects {
+  padding-right: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.65);
+  height: 50px;
+  line-height: 50px;
+  border-right: 2px solid transparent;
+  cursor: pointer;
+}
+.xy-content-body .left-tab .subjects:hover {
+  color: #4196ff;
+}
+.xy-content-body .left-tab .subject-set {
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: bold;
+}
+.xy-content-body .left-tab .subject-set .subject-rules {
+  height: 32px;
+  line-height: 32px;
+}
+.xy-content-body .left-tab .subject-set .subject-rules i {
+  width: 30px;
+}
+.xy-content-body .left-tab .subject-set .subjects-ul {
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 5px;
+}
+.xy-content-body .left-tab .subject-set .subjects-ul li {
+  height: 35px;
+  line-height: 35px;
+  border-right: 2px solid transparent;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.xy-content-body .left-tab .subject-set .subjects-ul li:hover {
+  color: #4196ff;
+}
+.xy-content-body .left-tab .active-li {
+  border-right: 2px solid #4196ff;
+  color: #4196ff !important;
+}
+.xy-content-body .right-content {
+  border-top: 1px solid #d8d8d8;
+  width: -moz-calc(0%);
+  width: -webkit-calc(0%);
+  width: calc(100% - 100px);
+}

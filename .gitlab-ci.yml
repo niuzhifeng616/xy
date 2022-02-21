@@ -1,0 +1,12 @@
+stages:
+    - sonar
+    
+sonar:
+    only:
+        - master
+        - develop
+        - /^release/.*$/   
+    stage: sonar
+    script:
+        - chcp 65001
+        - vue-sonar

@@ -1,0 +1,117 @@
+﻿.xy-content-title {
+    border-bottom: 1px solid #e8e8e8;
+    border-radius: 0;
+}
+.xy-content-body {
+    min-height: 505px;
+    padding: 0;
+}
+
+.exam-programme-name {
+    position:relative;
+    text-align: center;
+    font-size: 18px;
+    font-weight:bold;
+}
+    .exam-programme-name div::after {
+        content: '';
+        position:absolute;
+        bottom:-4px;
+        left:50%;
+        margin-left:-20px;
+        width: 40px;
+        height: 4px;
+        background: #4196ff;
+        border-radius: 4px;
+    }
+.parent-nav-content {
+    width: 1030px;
+    margin: 30px auto 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.parent-nav-list {
+    position: relative;
+    text-align: center;
+}
+
+.parent-nav-list .parent-nav-icon {
+    width: 20px;
+    text-align: center;
+    margin: 0 auto;
+    height: 20px;
+    line-height: 18px;
+    border-radius: 50%;
+    border: 1px solid #d9d9d9;
+    color: #d9d9d9;
+    background: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.parent-nav-list.success, .parent-nav-list.arrive {
+    .parent-nav-icon {
+        color: #4196ff;
+        border: 1px solid #4196ff;
+    }
+}
+.parent-nav-list.success::before, .parent-nav-list.now::before, .parent-nav-list.arrive::before {
+    background: #4196ff;
+}
+
+.parent-nav-list.now .parent-nav-icon {
+    position: relative;
+    background: #4196FF;
+    border: 1px solid #4196ff;
+    color: #fff;
+}
+
+    .parent-nav-list.now .parent-nav-icon > div {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+
+    .parent-nav-list.arrive .parent-nav-icon > div {
+        background: rgba(65, 150, 255,0.5);
+    }
+
+    .parent-nav-list.now .parent-nav-icon > div {
+        background: #4196ff !important;
+    }
+
+.parent-nav-list.null .parent-nav-icon {
+    cursor: not-allowed;
+}
+.parent-nav-list.null .parent-nav-name {
+    cursor: not-allowed;
+}
+
+.parent-nav-list::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 86px;
+    width: 45px;
+    height: 2px;
+    background: #eee;
+}
+
+.parent-nav-list:first-child::before {
+    background: #fff;
+}
+
+.parent-nav-name {
+    color: #909399;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    .parent-nav-name.active {
+        color: rgba(0, 0, 0, .85);
+    }

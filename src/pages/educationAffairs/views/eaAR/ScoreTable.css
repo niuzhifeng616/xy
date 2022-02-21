@@ -1,0 +1,12 @@
+﻿/* table */
+th.set-border,
+td.set-border {
+    border-left: 1px dashed #E8E8E8;
+}
+td.set-border .ivu-table-cell {
+    position: relative;
+    left: 0px;
+}
+.ant-table-thead > tr > th[colspan]{
+    border-bottom: 1px solid #e8e8e8;
+}

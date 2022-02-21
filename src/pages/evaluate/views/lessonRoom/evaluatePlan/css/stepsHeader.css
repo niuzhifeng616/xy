@@ -1,0 +1,66 @@
+.step-con{
+  background: #fff;
+}
+.step-item {
+    display: flex;
+    align-items: center;
+}
+.step-item .step-num {
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    border: 1px solid #1890FF;
+    border-radius: 50%;
+    font-weight: 400;
+    font-size: 14px;
+    margin-right: 5px;
+    color: #cdcdcd;
+    text-align: center;
+    color: #1890FF;
+    cursor: pointer;
+}
+.step-item.current-step .step-num {
+    color: #fff;
+    border-color: #1890FF;
+    background: #1890FF;
+}
+.step-item.disabled .step-num {
+    border-color: rgba(217,217,217,1);
+    color: rgba(0,0,0,0.25);
+}
+.step-item .step-name {
+    color: rgba(0,0,0,0.65);
+    font-size: 14px;
+}
+.step-item.current-step .step-name{
+  font-weight: bold;
+  color: rgba(0,0,0,0.85);
+}
+.step-item.disabled .step-name {
+    color: rgba(0,0,0,0.25);
+}
+.step-item .step-line {
+    width: 60px;
+    height: 1px;
+    background-color: #1890FF;
+    margin: 0 5px;
+}
+.step-item.disabled .step-line {
+    background: rgba(0,0,0,0.15);
+}
+
+/* 组件样式覆盖 */
+.step-con .ivu-tabs-bar{
+  border-bottom: none;
+  margin: 20px 10px;
+}
+.step-con .ivu-tabs-nav{
+  width: 2000px;
+}
+.step-con .ivu-tabs-nav .ivu-tabs-tab{
+  padding: 5px 0;
+  margin-right: 5px;
+}
+.step-con .ivu-tabs-ink-bar{
+  display: none;
+}
